@@ -1,495 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ommkar Digital - GTPL & Airtel Plans</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: #f0f2f5;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: linear-gradient(135deg, #0f5482 0, #026aa7 100%);
-            color: white;
-            padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 18px;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-        nav a:hover {
-            color: #ff6b35;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 40px auto 0 auto;
-            padding: 30px 20px;
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 2px 24px rgba(0,0,0,0.07);
-        }
-        .section-title {
-            font-size: 26px;
-            color: #026aa7;
-            font-weight: 700;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-        .plans-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 24px;
-            justify-content: center;
-        }
-        .plan-card {
-            background: #fff;
-            border: 1px solid #f0f0f0;
-            border-radius: 14px;
-            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-            width: 240px;
-            padding: 18px 16px;
-            transition: box-shadow 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        .plan-card:hover {
-            box-shadow: 0 4px 28px rgba(2,106,167,0.16);
-            border-color: #026aa73a;
-        }
-        .plan-header {
-            font-size: 18px;
-            font-weight: bold;
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 12px;
-            gap: 2px;
-        }
-        .plan-price {
-            color: #ff6b35;
-            font-size: 22px;
-        }
-        .plan-duration {
-            background: #e0f3fa;
-            color: #026aa7;
-            padding: 3px 12px;
-            border-radius: 10px;
-            font-size: 14px;
-            margin-top: 5px;
-            width: fit-content;
-        }
-        .plan-body {
-            font-size: 16px;
-            color: #333;
-        }
-        .plan-feature {
-            margin-bottom: 8px;
-        }
-        @media (max-width: 800px) {
-            .plans-grid {
-                flex-direction: column;
-                gap: 18px;
-                align-items: center;
-            }
-            .container {
-                padding: 18px 8px;
-            }
-        }
-        .ads-section, .contact-section {
-            background: #fafcfe;
-            padding: 22px 14px;
-            border-radius: 12px;
-            box-shadow: 0 2px 16px rgba(2,106,167,0.09);
-            margin: 30px auto;
-            max-width: 850px;
-        }
-        .footer {
-            background: #0f5482;
-            color: white;
-            text-align: center;
-            padding: 18px 0;
-            margin-top: 30px;
-        }
-        .footer a { color: #fff; text-decoration: underline; }
-    </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ommkar Digital - GTPL & Airtel Plans</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; color: #333; }
+    header { background: linear-gradient(135deg, #0f5482 0, #026aa7 100%); color: white; padding: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.2); position: sticky; top: 0; z-index: 100; }
+    .header-content { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 28px; font-weight: bold; display: flex; align-items: center; gap: 10px; }
+    nav a { color: white; text-decoration: none; margin: 0 18px; font-weight: 500; transition: 0.3s; }
+    nav a:hover { color: #ff6b35; }
+    .container { max-width: 1200px; margin: 40px auto 0; padding: 30px 20px; background: white; border-radius: 16px; box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
+    .section-title { font-size: 26px; color: #026aa7; font-weight: 700; margin-bottom: 25px; text-align: center; }
+    .plans-grid { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; }
+    .plan-card { background: #fff; border: 1px solid #f0f0f0; border-radius: 14px; box-shadow: 0 2px 16px rgba(0,0,0,0.08); width: 240px; padding: 20px 16px; transition: box-shadow 0.3s; }
+    .plan-card:hover { box-shadow: 0 4px 28px rgba(2,106,167,0.16); border-color: #026aa73a; }
+    .plan-header { font-size: 18px; font-weight: bold; margin-bottom: 12px; }
+    .plan-price { color: #ff6b35; font-size: 22px; margin: 10px 0; }
+    .badge { background: #ff9800; color: white; padding: 3px 9px; border-radius: 5px; font-size: 12px; display: inline-block; margin-top: 5px; }
+    .ads-section, .contact-section { background: #fafcfe; padding: 22px 14px; border-radius: 12px; box-shadow: 0 2px 16px rgba(2,106,167,0.09); margin: 30px auto; max-width: 850px; }
+    .footer { background: #0f5482; color: white; text-align: center; padding: 18px 0; margin-top: 30px; }
+    @media (max-width: 800px) { .plans-grid { flex-direction: column; gap: 18px; align-items: center; } nav { flex-direction: column; gap: 10px; } }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <img src="OMMKAR LOGO.jpg" alt="Logo" style="height:100px;border-radius:12px;">
-                Ommkar Digital
-            </div>
-            <nav>
-                <a href="#gtpl-ott">GTPL Plans</a>
-                <a href="#airtel-xtreme">Airtel Plans</a>
-                <a href="#offers">Offers</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
-    <!-- HERO SECTION -->
-    <section class="container" id="hero"><!-- High-Speed Broadband & TV Services -->
-<div class="container">
-  <h2 class="section-title">High-Speed Broadband & TV Services</h2>
-  <p>Get Premium GTPL & KCBPL Plans at Best Prices</p>
-  <ul>
-    <li>India's largest Multi-System Operator</li>
-    <li>High-Speed Unlimited Broadband</li>
-    <li>24/7 Customer Support</li>
-    <li>Free Installation & Router</li>
-    <li>HD Quality Channels | 24/7 Entertainment</li>
-    <li>No Hidden Charges</li>
-  </ul>
-  
-  <!-- GTPL Booster Plans (plan-card style) -->
-  <h2 class="section-title">GTPL Booster Plans</h2>
-  <div class="plans-grid">
-    <div class="plan-card">
-      <h3>Starter 40</h3>
-      <div>Speed: <b>40 Mbps</b></div>
-      <div class="price">₹400 / month</div>
+  <header>
+    <div class="header-content">
+      <div class="logo">🌐 Ommkar Digital</div>
+      <nav>
+        <a href="#gtpl-ott">GTPL Plans</a>
+        <a href="#airtel-xtreme">Airtel Plans</a>
+        <a href="#offers">Offers</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-    <div class="plan-card">
-      <h3>Boost 80</h3>
-      <div>Speed: <b>80 Mbps</b></div>
-      <div class="price">₹496 / month</div>
+  </header>
+
+  <section class="container" id="hero">
+    <h2 class="section-title">High-Speed Broadband & TV Services</h2>
+    <p style="text-align: center; margin-bottom: 20px;">Get Premium GTPL & Airtel Plans at Best Prices</p>
+    <ul style="list-style: none; text-align: center; margin-bottom: 30px;">
+      <li>✅ India's largest Multi-System Operator</li>
+      <li>✅ High-Speed Unlimited Broadband</li>
+      <li>✅ 24/7 Customer Support</li>
+      <li>✅ Free Installation & Router</li>
+      <li>✅ HD Quality Channels | 24/7 Entertainment</li>
+      <li>✅ No Hidden Charges</li>
+    </ul>
+  </section>
+
+  <section class="container" id="gtpl-plans">
+    <h2 class="section-title">GTPL Booster Plans</h2>
+    <div class="plans-grid">
+      <div class="plan-card">
+        <div class="plan-header">Starter 40</div>
+        <div>Speed: <b>40 Mbps</b></div>
+        <div class="plan-price">₹400 / month</div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-header">Boost 80</div>
+        <div>Speed: <b>80 Mbps</b></div>
+        <div class="plan-price">₹496 / month</div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-header">Boost 100</div>
+        <div>Speed: <b>100 Mbps</b></div>
+        <div class="plan-price">₹590 / month</div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-header">Boost 150 <span style="color:#ff9800;">⭐</span></div>
+        <div>Speed: <b>150 Mbps</b></div>
+        <div class="plan-price">₹650 / month</div>
+        <div class="badge">Recommended</div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-header">Boost 200</div>
+        <div>Speed: <b>200 Mbps</b></div>
+        <div class="plan-price">₹1200 / month</div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-header">Boost 250</div>
+        <div>Speed: <b>250 Mbps</b></div>
+        <div class="plan-price">₹1400 / month</div>
+      </div>
     </div>
-    <div class="plan-card">
-      <h3>Boost 100</h3>
-      <div>Speed: <b>100 Mbps</b></div>
-      <div class="price">₹590 / month</div>
+  </section>
+
+  <section class="container" id="gtpl-ott">
+    <h2 class="section-title">GTPL OTT Plus Plans (30+ Premium Apps)</h2>
+    <div class="plans-grid">
+      <div class="plan-card">
+        <div class="plan-header">OTT Plus 80</div>
+        <div class="plan-price">₹649</div>
+        <div style="font-size: 12px; color: #026aa7;">30 Days</div>
+        <div style="margin-top: 10px;"><strong>Speed:</strong> 80 Mbps | <strong>Apps:</strong> 30+</div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-header">OTT Plus 100</div>
+        <div class="plan-price">₹743</div>
+        <div style="font-size: 12px; color: #026aa7;">30 Days</div>
+        <div style="margin-top: 10px;"><strong>Speed:</strong> 100 Mbps | <strong>Apps:</strong> 30+</div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-header">OTT Plus 150</div>
+        <div class="plan-price">₹803</div>
+        <div style="font-size: 12px; color: #026aa7;">30 Days</div>
+        <div style="margin-top: 10px;"><strong>Speed:</strong> 150 Mbps | <strong>Apps:</strong> 30+</div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-header">OTT Plus 200</div>
+        <div class="plan-price">₹1353</div>
+        <div style="font-size: 12px; color: #026aa7;">30 Days</div>
+        <div style="margin-top: 10px;"><strong>Speed:</strong> 200 Mbps | <strong>Apps:</strong> 30+</div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-header">OTT Plus 250</div>
+        <div class="plan-price">₹1553</div>
+        <div style="font-size: 12px; color: #026aa7;">30 Days</div>
+        <div style="margin-top: 10px;"><strong>Speed:</strong> 250 Mbps | <strong>Apps:</strong> 30+</div>
+      </div>
     </div>
-    <div class="plan-card recommended">
-      <h3>Boost 150 <span style="color:#ff9800;">★</span></h3>
-      <div>Speed: <b>150 Mbps</b></div>
-      <div class="price">₹650 / month</div>
-      <div class="badge">Recommended</div>
+  </section>
+
+  <section class="container" id="airtel-xtreme">
+    <h2 class="section-title">Airtel Xtreme WiFi Plans</h2>
+    <div class="plans-grid">
+      <div class="plan-card">
+        <div class="plan-header">30 Mbps</div>
+        <div class="plan-price">₹599</div>
+        <div style="font-size: 12px; color: #026aa7;">Monthly</div>
+        <div style="margin-top: 10px;">Zee5, Disney+ Hotstar, Xstream</div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-header">100 Mbps</div>
+        <div class="plan-price">₹899</div>
+        <div style="font-size: 12px; color: #026aa7;">Monthly</div>
+        <div style="margin-top: 10px;">Zee5, Disney+, Amazon Prime, Xstream</div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-header">200 Mbps</div>
+        <div class="plan-price">₹1099</div>
+        <div style="font-size: 12px; color: #026aa7;">Monthly</div>
+        <div style="margin-top: 10px;">Zee5, Disney+, Amazon Prime, Xstream</div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-header">300 Mbps</div>
+        <div class="plan-price">₹1599</div>
+        <div style="font-size: 12px; color: #026aa7;">Monthly</div>
+        <div style="margin-top: 10px;">Netflix, Zee5, Disney+, Amazon Prime, Xstream</div>
+      </div>
     </div>
-    <div class="plan-card">
-      <h3>Boost 200</h3>
-      <div>Speed: <b>200 Mbps</b></div>
-      <div class="price">₹1200 / month</div>
+  </section>
+
+  <section id="offers" class="ads-section">
+    <h3 style="color:#045485;">🎁 Special Offers</h3>
+    <ul style="font-size:16px;color:#2b4971;margin-top: 15px;">
+      <li>🎉 First 3 months FREE for new customers!</li>
+      <li>💰 Broadband + TV combo at ₹499/month</li>
+      <li>🔄 Refer friends and get 1 month free for every referral</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h3 style="color:#045485;">📞 Contact Us</h3>
+    <div style="margin-top: 15px;">
+      <p><strong>Phone:</strong> <a href="tel:7788997704" style="color: #026aa7; text-decoration: none;">7788997704</a></p>
+      <p><strong>Email:</strong> <a href="mailto:omkarrajzdigital@gmail.com" style="color: #026aa7; text-decoration: none;">omkarrajzdigital@gmail.com</a></p>
+      <p><strong>Address:</strong> OMMKAR DIGITAL, BUXI BAZAR, CUTTACK - 753001, ODISHA</p>
+      <p><strong>Timings:</strong> Mon-Sat: 10 AM - 8 PM IST</p>
     </div>
-    <div class="plan-card">
-      <h3>Boost 250</h3>
-      <div>Speed: <b>250 Mbps</b></div>
-      <div class="price">₹1400 / month</div>
-    </div>
+  </section>
+
+  <div class="footer">
+    <p>© 2025 Ommkar Digital. All rights reserved.</p>
+    <p><a href="mailto:info@ommkardigital.com" style="color: #fff; text-decoration: underline;">info@ommkardigital.com</a></p>
+    <p style="margin-top: 10px;">🌟 Bringing High-Speed Internet & Entertainment to Cuttack!</p>
   </div>
-  <!-- End GTPL Booster Plans -->
-
-  <!-- Add your other OTT and airtel plans below -->
-</div>
-
-<!-- CSS section (if not already in your style block) -->
-<style>
-.plans-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 30px;
-}
-.plan-card {
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-  padding: 30px 20px;
-  width: 220px;
-  text-align: center;
-  position: relative;
-  border: 2px solid #e0e7ff;
-  transition: box-shadow 0.3s;
-}
-.plan-card:hover {
-  box-shadow: 0 4px 24px rgba(0,0,0,0.13);
-  border-color: #1976d2;
-}
-.plan-card h3 {
-  font-size: 22px;
-  margin-bottom: 12px;
-  color: #1976d2;
-}
-.price {
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 8px;
-  color: #ff6b35;
-}
-.plan-card .badge {
-  position: absolute;
-  top: 16px;
-  right: 20px;
-  background: #ff9800;
-  color: #fff;
-  font-size: 12px;
-  padding: 3px 9px;
-  border-radius: 5px;
-  font-weight: bold;
-}
-.plan-card.recommended {
-  border-color: #ff9800;
-  box-shadow: 0 6px 24px rgba(255, 152, 0, 0.13);
-}
-</style>
-
-        </ul>
-    </section>
-    <!-- GTPL OTT PLUS PLANS SECTION -->
-    <section id="gtpl-ott" class="container">
-        <h2 class="section-title">GTPL OTT Plus Plans (Play Box TV)</h2>
-        <div style="text-align: center; margin-bottom:40px;">
-            <img src="WATCHO LOGO.jpg" alt="WATCHO LOGO" style="height:88px;">
-        </div>
-        <div class="plans-grid">
-            <div class="plan-card">
-                <div class="plan-header"><div class="plan-name">OTT Plus 80</div><div class="plan-price">₹649</div><div class="plan-duration">30 Days</div></div>
-                <div class="plan-body">
-                    <div class="plan-feature"><strong>Speed</strong> <span>80 Mbps</span></div>
-                    <div class="plan-feature"><strong>OTT Apps</strong> <span>30+ Included</span></div>
-                </div>
-            </div>
-            <div class="plan-card">
-                <div class="plan-header"><div class="plan-name">OTT Plus 100</div><div class="plan-price">₹743</div><div class="plan-duration">30 Days</div></div>
-                <div class="plan-body">
-                    <div class="plan-feature"><strong>Speed</strong> <span>100 Mbps</span></div>
-                    <div class="plan-feature"><strong>OTT Apps</strong> <span>30+ Included</span></div>
-                </div>
-            </div>
-            <div class="plan-card">
-                <div class="plan-header"><div class="plan-name">OTT Plus 150</div><div class="plan-price">₹803</div><div class="plan-duration">30 Days</div></div>
-                <div class="plan-body">
-                    <div class="plan-feature"><strong>Speed</strong> <span>150 Mbps</span></div>
-                    <div class="plan-feature"><strong>OTT Apps</strong> <span>30+ Included</span></div>
-                </div>
-            </div>
-            <div class="plan-card">
-                <div class="plan-header"><div class="plan-name">OTT Plus 200</div><div class="plan-price">₹1353</div><div class="plan-duration">30 Days</div></div>
-                <div class="plan-body">
-                    <div class="plan-feature"><strong>Speed</strong> <span>200 Mbps</span></div>
-                    <div class="plan-feature"><strong>OTT Apps</strong> <span>30+ Included</span></div>
-                </div>
-            </div>
-            <div class="plan-card">
-                <div class="plan-header"><div class="plan-name">OTT Plus 250</div><div class="plan-price">₹1553</div><div class="plan-duration">30 Days</div></div>
-                <div class="plan-body">
-                    <div class="plan-feature"><strong>Speed</strong> <span>250 Mbps</span></div>
-                    <div class="plan-feature"><strong>OTT Apps</strong> <span>30+ Included</span></div>
-                </div>
-            </div>
-        </div>
-        <div style="text-align: center; margin:30px 0;">
-            <img src="GTPL-BROADBAND-OTT.jpg" alt="GTPL OTT Apps" style="max-width:740px;width:100%;border-radius:10px;">
-        </div>
-    </section>
-    <!-- AIRTEL XTREME PLANS SECTION -->
-    <section id="airtel-xtreme" class="container">
-        <h2 class="section-title">Airtel Xtreme WiFi Plans</h2>
-        <div style="text-align: center; margin-bottom:20px;">
-            <img src="AIRTEL XTREME LOGO.jpg" alt="Airtel Xtreme Logo" style="height:64px;">
-        </div>
-        <div class="plans-grid">
-            <div class="plan-card">
-                <div class="plan-header"><div class="plan-name">30 Mbps</div><div class="plan-price">₹599</div><div class="plan-duration">Monthly</div></div>
-                <div class="plan-body">
-                    <div class="plan-feature"><strong>OTT Apps</strong> <span>Zee5, Disney+ Hotstar, Xstream Play</span></div>
-                </div>
-            </div>
-            <div class="plan-card">
-                <div class="plan-header"><div class="plan-name">100 Mbps</div><div class="plan-price">₹899</div><div class="plan-duration">Monthly</div></div>
-                <div class="plan-body">
-                    <div class="plan-feature"><strong>OTT Apps</strong> <span>Zee5, Disney+ Hotstar, Amazon Prime, Xstream Play</span></div>
-                </div>
-            </div>
-            <div class="plan-card">
-                <div class="plan-header"><div class="plan-name">200 Mbps</div><div class="plan-price">₹1099</div><div class="plan-duration">Monthly</div></div>
-                <div class="plan-body">
-                    <div class="plan-feature"><strong>OTT Apps</strong> <span>Zee5, Disney+ Hotstar, Amazon Prime, Xstream Play</span></div>
-                </div>
-            </div>
-            <div class="plan-card">
-                <div class="plan-header"><div class="plan-name">300 Mbps</div><div class="plan-price">₹1599</div><div class="plan-duration">Monthly</div></div>
-                <div class="plan-body">
-                    <div class="plan-feature"><strong>OTT Apps</strong> <span>Netflix, Zee5, Disney+ Hotstar, Amazon Prime, Xstream Play</span></div>
-                </div>
-            </div>
-        </div>
-        <div style="text-align: center; margin:30px 0;">
-            <img src="AIRTEL-XTREME-PLAN.jpg" alt="Airtel OTT Apps" style="max-width:740px;width:100%;border-radius:10px;">
-        </div>
-<!-- Font Awesome Icons CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<style>
-.accordion-section {
-  background: #f8f9fa;
-  padding: 30px 0;
-}
-.accordion-container {
-  max-width: 850px;
-  margin: auto;
-  padding: 0 20px;
-}
-.accordion-title {
-  color: #2874A6;
-  text-align: center;
-  font-size: 2em;
-  margin-bottom: 18px;
-}
-.accordion {
-  background: #fff;
-  border-radius: 6px;
-  box-shadow: 0 2px 12px rgba(40,116,166,0.10);
-  margin-bottom: 12px;
-  overflow: hidden;
-}
-.accordion-header {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  padding: 18px 18px;
-  font-size: 1.08em;
-  font-weight: 600;
-  color: #1a355c;
-  border-bottom: 1px solid #e0e0e0;
-  transition: background 0.2s;
-}
-.accordion-header:hover { background: #eaf3fa; }
-.accordion-header i {
-  margin-right: 16px;
-  color: #2874A6;
-  font-size: 1.25em;
-}
-.accordion-body {
-  max-height: 0;
-  overflow: hidden;
-  background: #fcfcfc;
-  color: #495057;
-  font-size: 1em;
-  line-height: 1.7;
-  padding: 0 18px;
-  transition: max-height 0.32s cubic-bezier(0.86,0,0.07,1);
-}
-.accordion.active .accordion-body {
-  padding: 18px;
-  max-height: 300px; /* Adjust based on content */
-  border-bottom: 1px solid #e0e0e0;
-}
-</style>
-
-<section class="accordion-section" id="isp-strategy">
-  <div class="accordion-container">
-    <h2 class="accordion-title">Our Unique ISP Strategies</h2>
-
-    <div class="accordion">
-      <div class="accordion-header"><i class="fas fa-headset"></i> Super-Local Fast Support</div>
-      <div class="accordion-body">
-        Instant local support, same-day complaint resolution, and WhatsApp helpline for quick response in Cuttack.
-      </div>
-    </div>
-    <div class="accordion">
-      <div class="accordion-header"><i class="fas fa-gift"></i> Exclusive Combo Offers</div>
-      <div class="accordion-body">
-        Broadband + CCTV packages, home/office Wi-Fi solutions, device sales, and special yearly AMCs.
-      </div>
-    </div>
-    <div class="accordion">
-      <div class="accordion-header"><i class="fas fa-briefcase"></i> Business & Office Solutions</div>
-      <div class="accordion-body">
-        Custom plans for offices, institutes, and shops: Network security, CCTV monitoring, Wi-Fi management.
-      </div>
-    </div>
-    <div class="accordion">
-      <div class="accordion-header"><i class="fas fa-hands-helping"></i> Referral & Loyalty Rewards</div>
-      <div class="accordion-body">
-        Refer-a-friend, yearly bonuses, free upgrades, and special discounts for loyal customers.
-      </div>
-    </div>
-    <div class="accordion">
-      <div class="accordion-header"><i class="fas fa-users"></i> Community Connect Marketing</div>
-      <div class="accordion-body">
-        Regular digital safety sessions, free Wi-Fi days, society events, and WhatsApp group engagement.
-      </div>
-    </div>
-    <div class="accordion">
-      <div class="accordion-header"><i class="fas fa-plug"></i> Innovative Mini-Products</div>
-      <div class="accordion-body">
-        Best-priced routers, Wi-Fi extenders, and smart configuration services for homes & businesses.
-      </div>
-    </div>
-    <div class="accordion">
-      <div class="accordion-header"><i class="fas fa-rupee-sign"></i> Flexible Payments</div>
-      <div class="accordion-body">
-        Easy renewal via Paytm, Google Pay, or doorstep collection—advance payments get exclusive surprises!
-      </div>
-    </div>
-  </div>
-</section>
-
-<script>
-const accHeaders = document.querySelectorAll('.accordion-header');
-accHeaders.forEach(header => {
-  header.addEventListener('click', function() {
-    const parent = this.parentElement;
-    parent.classList.toggle('active');
-    // Close others
-    document.querySelectorAll('.accordion').forEach(acc => {
-      if(acc !== parent) acc.classList.remove('active');
-    });
-  });
-});
-</script>
-    </section>
-    <!-- OFFERS SECTION -->
-    <section id="offers" class="ads-section">
-        <h3 style="color:#045485;">Special Offers</h3>
-        <ul style="font-size:16px;color:#2b4971;">
-            <li>Get first 3 month free for new customers! </li>
-            <li>Combo of Broadband + TV at ₹499/month</li>
-            <li>Refer friends and get one month free for every successful referral</li>
-        </ul>
-    </section>
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="contact-section">
-        <h3 style="color:#045485;">Contact Us</h3>
-        <div>
-            <strong>Phone:</strong> 7788997704<br>
-            <strong>Email:</strong> omkarrajzdigital@gmail.com, support@ommkardigital.com<br>
-            <strong>Address:</strong> OMMKAR DIGITAL,BUXI BAZAR,CUTTACK_753001,ODISHA<br>
-            <strong>Timings:</strong> Mon-Sat: 10AM - 8PM
-        </div>
-    </section>
-    <div class="footer">
-        &copy; 2025 Ommkar Digital. All rights reserved. |
-        <a href="mailto:info@ommkardigital.com">info@ommkardigital.com</a>
-    </div>
 </body>
 </html>
