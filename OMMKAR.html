@@ -1,183 +1,522 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ommkar Digital - GTPL & Airtel Plans</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; color: #333; }
-    header { background: linear-gradient(135deg, #0f5482 0, #026aa7 100%); color: white; padding: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.2); position: sticky; top: 0; z-index: 100; }
-    .header-content { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-size: 28px; font-weight: bold; display: flex; align-items: center; gap: 10px; }
-    nav a { color: white; text-decoration: none; margin: 0 18px; font-weight: 500; transition: 0.3s; }
-    nav a:hover { color: #ff6b35; }
-    .container { max-width: 1200px; margin: 40px auto 0; padding: 30px 20px; background: white; border-radius: 16px; box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
-    .section-title { font-size: 26px; color: #026aa7; font-weight: 700; margin-bottom: 25px; text-align: center; }
-    .plans-grid { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; }
-    .plan-card { background: #fff; border: 1px solid #f0f0f0; border-radius: 14px; box-shadow: 0 2px 16px rgba(0,0,0,0.08); width: 240px; padding: 20px 16px; transition: box-shadow 0.3s; }
-    .plan-card:hover { box-shadow: 0 4px 28px rgba(2,106,167,0.16); border-color: #026aa73a; }
-    .plan-header { font-size: 18px; font-weight: bold; margin-bottom: 12px; }
-    .plan-price { color: #ff6b35; font-size: 22px; margin: 10px 0; }
-    .badge { background: #ff9800; color: white; padding: 3px 9px; border-radius: 5px; font-size: 12px; display: inline-block; margin-top: 5px; }
-    .ads-section, .contact-section { background: #fafcfe; padding: 22px 14px; border-radius: 12px; box-shadow: 0 2px 16px rgba(2,106,167,0.09); margin: 30px auto; max-width: 850px; }
-    .footer { background: #0f5482; color: white; text-align: center; padding: 18px 0; margin-top: 30px; }
-    @media (max-width: 800px) { .plans-grid { flex-direction: column; gap: 18px; align-items: center; } nav { flex-direction: column; gap: 10px; } }
-  </style>
+    <meta charset="UTF-8">
+    <title>Ommkar Digital - Broadband & TV Plans</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ommkar Digital - Reliable Broadband Internet and Digital TV services for homes and businesses. High-speed internet, HD TV channels and combo plans.">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            background: #f4f6f9;
+            color: #222;
+            line-height: 1.5;
+        }
+        header {
+            background: #0b5ed7;
+            color: #fff;
+            padding: 16px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        header .top-bar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header h1 {
+            font-size: 22px;
+            letter-spacing: 0.5px;
+        }
+        header p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+        nav {
+            margin-top: 8px;
+        }
+        nav a {
+            color: #e9f2ff;
+            text-decoration: none;
+            margin-right: 16px;
+            font-size: 14px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 16px 12px 40px 12px;
+        }
+        .hero {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 18px 16px;
+            margin-top: 16px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+        .hero-main {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .hero-text {
+            max-width: 620px;
+        }
+        .hero-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+        .hero-subtitle {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .hero-highlights {
+            font-size: 13px;
+            color: #444;
+            margin-bottom: 10px;
+        }
+        .hero-highlights span {
+            display: inline-block;
+            background: #e7f1ff;
+            padding: 4px 8px;
+            border-radius: 14px;
+            margin: 3px 5px 3px 0;
+            font-size: 12px;
+        }
+        .hero-cta {
+            margin-top: 10px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            margin-right: 6px;
+        }
+        .btn-primary {
+            background: #0b5ed7;
+            color: #fff;
+        }
+        .btn-secondary {
+            background: #ffffff;
+            color: #0b5ed7;
+            border: 1px solid #0b5ed7;
+        }
+        .btn-outline {
+            background: #ffffff;
+            color: #222;
+            border: 1px solid #ccc;
+        }
+        .hero-side {
+            margin-top: 10px;
+            text-align: right;
+            min-width: 220px;
+        }
+        .hero-side-box {
+            background: #0b5ed7;
+            color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 13px;
+        }
+        .hero-side-box b {
+            font-size: 18px;
+        }
+        section {
+            margin-top: 26px;
+        }
+        section h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #0b5ed7;
+        }
+        section p {
+            font-size: 13px;
+            color: #444;
+            margin-bottom: 8px;
+        }
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+            gap: 14px;
+        }
+        .plan-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 12px 12px 14px 12px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+            border-top: 3px solid #0b5ed7;
+            font-size: 13px;
+        }
+        .plan-name {
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+        .plan-speed {
+            font-size: 13px;
+            color: #0b5ed7;
+            margin-bottom: 4px;
+        }
+        .plan-details {
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 6px;
+        }
+        .plan-price {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+        .plan-note {
+            font-size: 11px;
+            color: #777;
+        }
+        .plan-actions {
+            margin-top: 8px;
+        }
+        .two-col {
+            display: grid;
+            grid-template-columns: minmax(0,1.1fr) minmax(0,0.9fr);
+            gap: 16px;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 12px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+            font-size: 13px;
+        }
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .card li {
+            margin-bottom: 6px;
+        }
+        .badge {
+            display: inline-block;
+            background: #e7f1ff;
+            color: #0b5ed7;
+            border-radius: 12px;
+            padding: 2px 8px;
+            font-size: 11px;
+            margin-bottom: 4px;
+        }
+        .contact-row {
+            margin-top: 6px;
+            font-size: 13px;
+        }
+        .contact-row b {
+            color: #000;
+        }
+        .contact-row a {
+            color: #0b5ed7;
+            text-decoration: none;
+        }
+        .contact-row a:hover {
+            text-decoration: underline;
+        }
+        form {
+            font-size: 13px;
+        }
+        form .form-group {
+            margin-bottom: 8px;
+        }
+        form label {
+            display: block;
+            margin-bottom: 2px;
+        }
+        form input, form select, form textarea {
+            width: 100%;
+            padding: 6px 7px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 13px;
+        }
+        form textarea {
+            resize: vertical;
+            min-height: 60px;
+        }
+        footer {
+            margin-top: 26px;
+            padding: 12px;
+            font-size: 11px;
+            text-align: center;
+            color: #777;
+        }
+        @media (max-width: 700px) {
+            .hero-main {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .hero-side {
+                width: 100%;
+                text-align: left;
+            }
+            header .top-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+            nav {
+                margin-top: 4px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="header-content">
-      <div class="logo">🌐 Ommkar Digital</div>
-      <nav>
-        <a href="#gtpl-ott">GTPL Plans</a>
-        <a href="#airtel-xtreme">Airtel Plans</a>
-        <a href="#offers">Offers</a>
-        <a href="#contact">Contact</a>
-      </nav>
+
+<header>
+    <div class="top-bar">
+        <div>
+            <h1>Ommkar Digital</h1>
+            <p>Broadband Internet & Digital TV Services</p>
+        </div>
+        <div style="font-size:13px;text-align:right;">
+            <div><b>Call / WhatsApp:</b> <a href="tel:+917788997704" style="color:#fff;text-decoration:none;">+91-77889-97704</a></div>
+            <div><b>Service Area:</b> Cuttack</div>
+        </div>
     </div>
-  </header>
+    <nav>
+        <a href="#broadband">Broadband Plans</a>
+        <a href="#tv">TV Plans</a>
+        <a href="#combo">Combo Plans</a>
+        <a href="#contact">Contact & Enquiry</a>
+    </nav>
+</header>
 
-  <section class="container" id="hero">
-    <h2 class="section-title">High-Speed Broadband & TV Services</h2>
-    <p style="text-align: center; margin-bottom: 20px;">Get Premium GTPL & Airtel Plans at Best Prices</p>
-    <ul style="list-style: none; text-align: center; margin-bottom: 30px;">
-      <li>✅ India's largest Multi-System Operator</li>
-      <li>✅ High-Speed Unlimited Broadband</li>
-      <li>✅ 24/7 Customer Support</li>
-      <li>✅ Free Installation & Router</li>
-      <li>✅ HD Quality Channels | 24/7 Entertainment</li>
-      <li>✅ No Hidden Charges</li>
-    </ul>
-  </section>
+<div class="container">
 
-  <section class="container" id="gtpl-plans">
-    <h2 class="section-title">GTPL Booster Plans</h2>
-    <div class="plans-grid">
-      <div class="plan-card">
-        <div class="plan-header">Starter 40</div>
-        <div>Speed: <b>40 Mbps</b></div>
-        <div class="plan-price">₹400 / month</div>
-      </div>
-      <div class="plan-card">
-        <div class="plan-header">Boost 80</div>
-        <div>Speed: <b>80 Mbps</b></div>
-        <div class="plan-price">₹496 / month</div>
-      </div>
-      <div class="plan-card">
-        <div class="plan-header">Boost 100</div>
-        <div>Speed: <b>100 Mbps</b></div>
-        <div class="plan-price">₹590 / month</div>
-      </div>
-      <div class="plan-card">
-        <div class="plan-header">Boost 150 <span style="color:#ff9800;">⭐</span></div>
-        <div>Speed: <b>150 Mbps</b></div>
-        <div class="plan-price">₹650 / month</div>
-        <div class="badge">Recommended</div>
-      </div>
-      <div class="plan-card">
-        <div class="plan-header">Boost 200</div>
-        <div>Speed: <b>200 Mbps</b></div>
-        <div class="plan-price">₹1200 / month</div>
-      </div>
-      <div class="plan-card">
-        <div class="plan-header">Boost 250</div>
-        <div>Speed: <b>250 Mbps</b></div>
-        <div class="plan-price">₹1400 / month</div>
-      </div>
-    </div>
-  </section>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-main">
+            <div class="hero-text">
+                <div class="hero-title">Reliable Broadband & TV for Home and Office</div>
+                <div class="hero-subtitle">
+                    High-speed internet, crystal-clear TV channels and prompt local support from Ommkar Digital.
+                </div>
+                <div class="hero-highlights">
+                    <span>Local ISP Support</span>
+                    <span>Fast Installation</span>
+                    <span>HD Channels</span>
+                    <span>Unlimited Data Plans</span>
+                </div>
+                <div class="hero-cta">
+                    <a href="tel:+919999999999" class="btn btn-primary">Call for New Connection</a>
+                    <a href="https://wa.me/919999999999" class="btn btn-secondary">WhatsApp Enquiry</a>
+                    <a href="#contact" class="btn btn-outline">Submit Online Request</a>
+                </div>
+            </div>
+            <div class="hero-side">
+                <div class="hero-side-box">
+                    <div>New Connection / Upgrade</div>
+                    <div><b>Today:</b> 9:00 AM – 8:30 PM</div>
+                    <div style="margin-top:6px;font-size:12px;">
+                        Same-day visit available for nearby areas subject to slot availability.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="container" id="gtpl-ott">
-    <h2 class="section-title">GTPL OTT Plus Plans (30+ Premium Apps)</h2>
-    <div class="plans-grid">
-      <div class="plan-card">
-        <div class="plan-header">OTT Plus 80</div>
-        <div class="plan-price">₹649</div>
-        <div style="font-size: 12px; color: #026aa7;">30 Days</div>
-        <div style="margin-top: 10px;"><strong>Speed:</strong> 80 Mbps | <strong>Apps:</strong> 30+</div>
-      </div>
-      <div class="plan-card">
-        <div class="plan-header">OTT Plus 100</div>
-        <div class="plan-price">₹743</div>
-        <div style="font-size: 12px; color: #026aa7;">30 Days</div>
-        <div style="margin-top: 10px;"><strong>Speed:</strong> 100 Mbps | <strong>Apps:</strong> 30+</div>
-      </div>
-      <div class="plan-card">
-        <div class="plan-header">OTT Plus 150</div>
-        <div class="plan-price">₹803</div>
-        <div style="font-size: 12px; color: #026aa7;">30 Days</div>
-        <div style="margin-top: 10px;"><strong>Speed:</strong> 150 Mbps | <strong>Apps:</strong> 30+</div>
-      </div>
-      <div class="plan-card">
-        <div class="plan-header">OTT Plus 200</div>
-        <div class="plan-price">₹1353</div>
-        <div style="font-size: 12px; color: #026aa7;">30 Days</div>
-        <div style="margin-top: 10px;"><strong>Speed:</strong> 200 Mbps | <strong>Apps:</strong> 30+</div>
-      </div>
-      <div class="plan-card">
-        <div class="plan-header">OTT Plus 250</div>
-        <div class="plan-price">₹1553</div>
-        <div style="font-size: 12px; color: #026aa7;">30 Days</div>
-        <div style="margin-top: 10px;"><strong>Speed:</strong> 250 Mbps | <strong>Apps:</strong> 30+</div>
-      </div>
-    </div>
-  </section>
+    <!-- BROADBAND PLANS -->
+    <section id="broadband">
+        <h2>Home & Office Broadband Plans</h2>
+        <p>Choose from our most popular broadband plans designed for streaming, work from home, online classes and gaming. Update speed and pricing as per your current tariff.</p>
+        <div class="plans-grid">
+            <div class="plan-card">
+                <div class="plan-name">Basic Unlimited</div>
+                <div class="plan-speed">Up to 40 Mbps</div>
+                <div class="plan-details">
+                    Unlimited data · Suitable for 1–2 users · HD streaming and browsing.
+                </div>
+                <div class="plan-price">₹400 / month </div>
+                <div class="plan-note">Taxes, installation and router charges extra as per policy.</div>
+                <div class="plan-actions">
+                    <a href="https://wa.me/919999999999?text=I%20am%20interested%20in%20Basic%20Unlimited%20plan" class="btn btn-outline">Enquire on WhatsApp</a>
+                </div>
+            </div>
 
-  <section class="container" id="airtel-xtreme">
-    <h2 class="section-title">Airtel Xtreme WiFi Plans</h2>
-    <div class="plans-grid">
-      <div class="plan-card">
-        <div class="plan-header">30 Mbps</div>
-        <div class="plan-price">₹599</div>
-        <div style="font-size: 12px; color: #026aa7;">Monthly</div>
-        <div style="margin-top: 10px;">Zee5, Disney+ Hotstar, Xstream</div>
-      </div>
-      <div class="plan-card">
-        <div class="plan-header">100 Mbps</div>
-        <div class="plan-price">₹899</div>
-        <div style="font-size: 12px; color: #026aa7;">Monthly</div>
-        <div style="margin-top: 10px;">Zee5, Disney+, Amazon Prime, Xstream</div>
-      </div>
-      <div class="plan-card">
-        <div class="plan-header">200 Mbps</div>
-        <div class="plan-price">₹1099</div>
-        <div style="font-size: 12px; color: #026aa7;">Monthly</div>
-        <div style="margin-top: 10px;">Zee5, Disney+, Amazon Prime, Xstream</div>
-      </div>
-      <div class="plan-card">
-        <div class="plan-header">300 Mbps</div>
-        <div class="plan-price">₹1599</div>
-        <div style="font-size: 12px; color: #026aa7;">Monthly</div>
-        <div style="margin-top: 10px;">Netflix, Zee5, Disney+, Amazon Prime, Xstream</div>
-      </div>
-    </div>
-  </section>
+            <div class="plan-card">
+                <div class="plan-name">Family Unlimited</div>
+                <div class="plan-speed">Up to 100 Mbps</div>
+                <div class="plan-details">
+                    Unlimited data · Ideal for 3–5 users · Full HD streaming, online meetings and gaming.
+                </div>
+                <div class="plan-price">₹590 / month </div>
+                <div class="plan-note">Free standard installation offer can be configured here if applicable.</div>
+                <div class="plan-actions">
+                    <a href="https://wa.me/919999999999?text=I%20am%20interested%20in%20Family%20Unlimited%20plan" class="btn btn-outline">Enquire on WhatsApp</a>
+                </div>
+            </div>
 
-  <section id="offers" class="ads-section">
-    <h3 style="color:#045485;">🎁 Special Offers</h3>
-    <ul style="font-size:16px;color:#2b4971;margin-top: 15px;">
-      <li>🎉 First 3 months FREE for new customers!</li>
-      <li>💰 Broadband + TV combo at ₹499/month</li>
-      <li>🔄 Refer friends and get 1 month free for every referral</li>
-    </ul>
-  </section>
+            <div class="plan-card">
+                <div class="plan-name">Premium Unlimited</div>
+                <div class="plan-speed">Up to 200 Mbps</div>
+                <div class="plan-details">
+                    Unlimited data · 4K streaming, heavy downloads and multi-device usage.
+                </div>
+                <div class="plan-price">₹999 / month </div>
+                <div class="plan-note">Ideal for offices / heavy usage homes. Customize according to your tariff.</div>
+                <div class="plan-actions">
+                    <a href="https://wa.me/919999999999?text=I%20am%20interested%20in%20Premium%20Unlimited%20plan" class="btn btn-outline">Enquire on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section id="contact" class="contact-section">
-    <h3 style="color:#045485;">📞 Contact Us</h3>
-    <div style="margin-top: 15px;">
-      <p><strong>Phone:</strong> <a href="tel:7788997704" style="color: #026aa7; text-decoration: none;">7788997704</a></p>
-      <p><strong>Email:</strong> <a href="mailto:omkarrajzdigital@gmail.com" style="color: #026aa7; text-decoration: none;">omkarrajzdigital@gmail.com</a></p>
-      <p><strong>Address:</strong> OMMKAR DIGITAL, BUXI BAZAR, CUTTACK - 753001, ODISHA</p>
-      <p><strong>Timings:</strong> Mon-Sat: 10 AM - 8 PM IST</p>
-    </div>
-  </section>
+    <!-- TV / IPTV PLANS -->
+    <section id="tv">
+        <h2>Digital TV / IPTV Plans</h2>
+        <p>HD & regional TV packs curated for your family’s favourite channels at the best local prices.</p>
+        <div class="plans-grid">
+            <div class="plan-card">
+                <div class="plan-name">SD Basic Pack</div>
+                <div class="plan-details">
+                    Essential SD channels · Popular entertainment, news and regional channels.
+                </div>
+                <div class="plan-price">Starts at ₹200 / month </div>
+                
+            </div>
+            <div class="plan-card">
+                <div class="plan-name">Family HD Pack</div>
+                <div class="plan-details">
+                    Entertainment, movies, kids, music and regional channels in one pack.
+                </div>
+                <div class="plan-price">Starts at ₹400 / month </div>
+                
+            </div>
+            <div class="plan-card">
+                <div class="plan-name">Sports Add-on</div>
+                <div class="plan-details">
+                    Add leading sports channels to any base pack for live cricket and tournaments.
+                </div>
+                <div class="plan-price">Add-on pricing as per latest offer</div>
+                <div class="plan-note">Update with current sports/top-up pack price.</div>
+            </div>
+        </div>
+    </section>
 
-  <div class="footer">
-    <p>© 2025 Ommkar Digital. All rights reserved.</p>
-    <p><a href="mailto:info@ommkardigital.com" style="color: #fff; text-decoration: underline;">info@ommkardigital.com</a></p>
-    <p style="margin-top: 10px;">🌟 Bringing High-Speed Internet & Entertainment to Cuttack!</p>
-  </div>
+    <!-- COMBO PLANS -->
+    <section id="combo">
+        <h2>Broadband + TV Combo Plans</h2>
+        <p>Highlight savings when customers take both broadband and TV from Ommkar Digital. These examples can be replaced by your actual combos.</p>
+        <div class="plans-grid">
+            <div class="plan-card">
+                <div class="plan-name">Combo Starter</div>
+                <div class="plan-speed">40 Mbps + HD Pack</div>
+                <div class="plan-details">
+                    Ideal for small families wanting both reliable internet and TV at one price.
+                </div>
+                <div class="plan-price">₹699 / month </div>
+                <div class="plan-note">Exact price to be updated as per your combo tariff.</div>
+            </div>
+            <div class="plan-card">
+                <div class="plan-name">Combo Family</div>
+                <div class="plan-speed">100 Mbps + Family HD Pack</div>
+                <div class="plan-details">
+                    Perfect for homes with TVs and heavy internet usage.
+                </div>
+                <div class="plan-price">₹825 / month </div>
+                <div class="plan-note">Free installation/router/DTH box included .</div>
+            </div>
+            </div>
+    </section>
+
+    <!-- WHY OMMKAR DIGITAL & CONTACT -->
+    <section id="contact">
+        <div class="two-col">
+            <div class="card">
+                <span class="badge">Why choose Ommkar Digital</span>
+                <h2 style="margin-top:6px;font-size:16px;">Local service, professional support</h2>
+                <ul style="margin-top:8px;">
+                    <li>Fast installation and relocation support for nearby areas.</li>
+                    <li>Local technician support for downtime and complaints.</li>
+                    <li>Different plans for students, families and business users.</li>
+                    <li>Easy renewal options: cash, UPI or online payment links.</li>
+                </ul>
+
+                <div style="margin-top:12px;">
+                    <div class="contact-row">
+                        <b>Office Address:</b> OMMKAR DIGITAL,Machhua Bazar,Cuttack-1, Odisha
+                    </div>
+                    <div class="contact-row">
+                        <b>Phone / WhatsApp:</b> <a href="tel:+917788997704">+91-77889-97704</a>
+                    </div>
+                    <div class="contact-row">
+                        <b>Email:</b> <a href="mailto:info@ommkarrajzdigital@gmail.com">info@omkarrajzdigital@gmail.com</a> (change if required)
+                    </div>
+                    <div class="contact-row">
+                        <b>Service Areas:</b> List main localities / colonies you cover.
+                    </div>
+                    <div class="contact-row">
+                        <b>Working Hours:</b> Example: 9:00 AM – 8:30 PM (All days)
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="badge">New Connection / Enquiry</span>
+                <h2 style="margin-top:6px;font-size:16px;">Submit your details</h2>
+                <p style="margin-top:6px;">Fill this form and our team will call you back for verification and installation scheduling.</p>
+                <!-- Static HTML form – configure backend or use form handler if available -->
+                <form action="mailto:info@ommkarrajzdigital@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number *</label>
+                        <input type="tel" id="mobile" name="Mobile" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="area">Area / Locality *</label>
+                        <input type="text" id="area" name="Area" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="connectionType">Connection Type *</label>
+                        <select id="connectionType" name="Connection Type" required>
+                            <option value="">Select</option>
+                            <option value="Broadband">Broadband</option>
+                            <option value="TV">TV / DTH / IPTV</option>
+                            <option value="Combo">Broadband + TV</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Additional Details (optional)</label>
+                        <textarea id="message" name="Message" placeholder="Preferred time to call, current operator, special requirements etc."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Enquiry</button>
+                    <a href="https://wa.me/919999999999?text=I%20want%20a%20new%20connection" class="btn btn-secondary" style="margin-top:6px;">Send via WhatsApp</a>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        © <span id="year"></span> Ommkar Digital. All rights reserved. | This page is for information only. Plans and prices are subject to change without prior notice.
+    </footer>
+</div>
+
+<script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
-
